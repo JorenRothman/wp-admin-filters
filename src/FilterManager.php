@@ -1,13 +1,11 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace JorenRothman\WpAdminFilters;
 
 use JorenRothman\WpAdminFilters\Filters\AbstractFilter;
+use JorenRothman\WpAdminFilters\Filters\CallbackFilter;
 use JorenRothman\WpAdminFilters\Filters\MetaFilter;
 use JorenRothman\WpAdminFilters\Filters\TaxonomyFilter;
-use JorenRothman\WpAdminFilters\Filters\CallbackFilter;
 use WP_Query;
 
 final class FilterManager
@@ -22,26 +20,25 @@ final class FilterManager
     }
 
     /**
-     *
      * @param string $key
      * @param array $args
      * @return FilterManager
      */
     public function addMetaFilter(string $key, array $args = []): self
     {
-        $this->filters[] = new MetaFilter($key, $args, $this->postType);
+        $this->filters[] = new MetaFilter($key, $this->postType, $args);
         return $this;
     }
 
     public function addTaxonomyFilter(string $key, array $args = []): self
     {
-        $this->filters[] = new TaxonomyFilter($key, $args, $this->postType);
+        $this->filters[] = new TaxonomyFilter($key, $this->postType, $args);
         return $this;
     }
 
     public function addCallbackFilter(string $key, array $args = []): self
     {
-        $this->filters[] = new CallbackFilter($key, $args, $this->postType);
+        $this->filters[] = new CallbackFilter($key, $this->postType, $args);
         return $this;
     }
 
@@ -66,7 +63,7 @@ final class FilterManager
 
     private function applyFilters(WP_Query $query): void
     {
-        if (! is_admin() || ! $query->is_main_query()) {
+        if (!is_admin() || !$query->is_main_query()) {
             return;
         }
 

@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace JorenRothman\WpAdminFilters\Filters;
 
@@ -13,11 +11,11 @@ abstract class AbstractFilter
     protected array $args;
     protected string $postType;
 
-    public function __construct(string $key, array $args = [], string $postType)
+    public function __construct(string $key, string $postType, array $args = [])
     {
-        $this->key   = $key;
+        $this->key = $key;
         $this->label = $args['label'] ?? ucfirst($key);
-        $this->args  = $args;
+        $this->args = $args;
         $this->postType = $postType;
     }
 
