@@ -1,5 +1,6 @@
 {
   "name": "jorenrothman/wp-admin-filters",
+  "license": "MIT",
   "type": "wordpress-muplugin",
   "autoload": {
     "psr-4": {
