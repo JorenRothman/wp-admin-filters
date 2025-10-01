@@ -1,0 +1,16 @@
+{
+    "name": "jorenrothman/wp-admin-filters",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "JorenRothman\\WpAdminFilters\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joren",
+            "email": "rothmanjoren@gmail.com"
+        }
+    ],
+    "require": {}
+}
