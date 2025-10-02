@@ -52,6 +52,13 @@ add_action('plugins_loaded', static function () {
         'key'   => 'isbn', // meta_key
     ]);
 
+    // Meta filter: Post Object/Relationship Field
+    $filters->addMetaFilter('items', [
+        'label' => 'Items',
+        'key'   => 'items', // meta_key
+        'resolve_posts' => true,
+    ]);
+
     // Taxonomy filter: Genre
     $filters->addTaxonomyFilter('genre', [
         'label'    => 'Genre',
@@ -106,6 +113,8 @@ Add a meta field filter. Args:
 - `key` (string) – Meta key (defaults to `$key`)
 - `options` (array) – Optional predefined key → label pairs. If omitted,
   distinct values are auto-discovered.
+- `resolve_posts` (bool) - Transform ids into post titles handy for
+  relationship/post object fields.
 
 ### `FilterManager::addTaxonomyFilter(string $key, array $args = [])`
 

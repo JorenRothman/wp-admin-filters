@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace JorenRothman\WpAdminFilters\Filters;
 
 use WP_Query;
@@ -42,8 +40,8 @@ final class TaxonomyFilter extends AbstractFilter
         $taxQuery = $query->get('tax_query') ?: [];
         $taxQuery[] = [
             'taxonomy' => $this->args['taxonomy'] ?? $this->key,
-            'field'    => 'slug',
-            'terms'    => $value,
+            'field' => 'slug',
+            'terms' => $value,
         ];
         $query->set('tax_query', $taxQuery);
     }

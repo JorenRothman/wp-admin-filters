@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace JorenRothman\WpAdminFilters\Filters;
 
@@ -14,7 +14,7 @@ final class MetaFilter extends AbstractFilter
         echo '<label for="' . esc_attr($this->key) . '" class="screen-reader-text">'
             . esc_html($this->label) . '</label>';
 
-        echo '<select name="' . esc_attr($this->key) . '" id="' . esc_attr($this->key) . '" class="admin-filter-select2">';
+        echo '<select style="width: 120px" name="' . esc_attr($this->key) . '" id="' . esc_attr($this->key) . '" class="admin-filter-select2">';
         echo '<option value="">' . esc_html($this->label) . '</option>';
 
         foreach ($options as $val => $text) {

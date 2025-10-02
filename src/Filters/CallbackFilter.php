@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace JorenRothman\WpAdminFilters\Filters;
 
 use WP_Query;

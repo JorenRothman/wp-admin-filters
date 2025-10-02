@@ -1,7 +1,7 @@
 {
   "name": "jorenrothman/wp-admin-filters",
   "license": "MIT",
-  "type": "wordpress-muplugin",
+  "type": "library",
   "autoload": {
     "psr-4": {
       "JorenRothman\\WpAdminFilters\\": "src/"
@@ -13,5 +13,7 @@
       "email": "rothmanjoren@gmail.com"
     }
   ],
-  "require": {}
+  "require-dev": {
+    "php-stubs/wordpress-stubs": "^6.8"
+  }
 }
