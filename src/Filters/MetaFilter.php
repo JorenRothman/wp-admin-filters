@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace JorenRothman\WpAdminFilters\Filters;
 
@@ -40,8 +38,8 @@ final class MetaFilter extends AbstractFilter
 
         $metaQuery = $query->get('meta_query') ?: [];
         $metaQuery[] = [
-            'key'     => $this->args['key'] ?? $this->key,
-            'value'   => $value,
+            'key' => $this->args['key'] ?? $this->key,
+            'value' => $value,
             'compare' => '=',
         ];
         $query->set('meta_query', $metaQuery);
@@ -90,8 +88,6 @@ final class MetaFilter extends AbstractFilter
                     $resolved[$id] = $post->post_title;
                 }
             }
-
-            sort($resolved);
 
             return $resolved;
         }
