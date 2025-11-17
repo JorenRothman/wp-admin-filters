@@ -30,7 +30,8 @@ final class Assets
                         placeholder: function() {
                             return $(this).data('placeholder') || 'Filter...';
                         },
-                        dropdownParent: $('.wrap')
+                        dropdownParent: $('.wrap'),
+                        dropdownAutoWidth: true,
                     });
                 });
                 JS;
@@ -41,7 +42,6 @@ final class Assets
                 /* Make Select2 match WordPress admin dropdowns */
                     .select2-container {
                         margin-right: 6px;
-                        width: 100px
                     }
 
                     .select2-container .select2-selection--single {
